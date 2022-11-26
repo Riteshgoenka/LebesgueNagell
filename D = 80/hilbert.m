@@ -1,0 +1,10 @@
+D := 5;
+_<x> := PolynomialRing(Rationals());
+F<r> := NumberField(x^2 - D);
+OF := Integers(F);
+M1 := HilbertCuspForms(F, (2*OF)^4*(3*OF)^2*(r*OF)^2);
+M1new := NewSubspace(M1);
+M2 := HilbertCuspForms(F, (2*OF)^4*(3*OF)^3*(r*OF)^2);
+M2new := NewSubspace(M2);
+print(Dimension(M1new));
+print(Dimension(M2new));
